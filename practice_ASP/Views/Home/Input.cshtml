@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Input";
+}
+<!--HomeController.csにメソッドを作成して、メソッド名を右クリック、
+対応するViewの作成を押して、スキャフォールディングする。-->
+<h1>Input</h1>
+
+<form action="/Home/Confirm" method="get">
+    <input type="text" name="tel" />
+    <br />
+    <input type="radio" name="gender" value="man" checked="checked"/>Man
+    <input type="radio" name="gender" value="woman" />Woman
+    <input type="submit" />
+</form>
+

@@ -1,0 +1,14 @@
+﻿@{
+}
+<h1>確認画面</h1>
+<p>以下の内容でよろしいでしょうか</p>
+<div>電話番号：<span>@ViewData["tel"]</span></div>
+<div>性別：<span>@ViewData["gender"]</span></div>
+<p><a href="Confirm?tel=080&gender=other">あいうえお</a></p>
+
+@if(ViewData["tel"].Equals("090-1111-2222")){
+	<p>認証しました。以下へどうぞ</p>
+	<a href="">特別なページ</a>
+}else{
+	<p>090-1111-2222に一致していない</p>
+}
