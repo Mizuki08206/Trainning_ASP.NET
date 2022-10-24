@@ -17,6 +17,7 @@ namespace practice_ASP.Models
         }
 
         public virtual DbSet<Person> People { get; set; } = null!;
+        public virtual DbSet<Testdb> Testdbs { get; set; } = null!;
         public virtual DbSet<Unext> Unexts { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -44,16 +45,18 @@ namespace practice_ASP.Models
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<Unext>(entity =>
+            modelBuilder.Entity<Testdb>(entity =>
             {
-                entity.ToTable("Unext");
+                entity.HasNoKey();
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.ToTable("testdb");
 
                 entity.Property(e => e.Genre)
-                    .HasMaxLength(20)
+                    .HasMaxLength(25)
                     .IsUnicode(false)
                     .HasColumnName("genre");
+
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
@@ -64,6 +67,25 @@ namespace practice_ASP.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("who");
+            });
+
+            modelBuilder.Entity<Unext>(entity =>
+            {
+                entity.ToTable("unext");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Genre)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("genre");
+
+                entity.Property(e => e.Length).HasColumnName("length");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("name");
             });
 
             OnModelCreatingPartial(modelBuilder);

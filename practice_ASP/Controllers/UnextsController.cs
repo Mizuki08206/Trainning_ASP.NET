@@ -47,13 +47,20 @@ namespace practice_ASP.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Search(string name,string genre)
+        {
+            ViewData["word"]=name;
+            ViewData["genre"] = genre;
+            Console.WriteLine("{0}\n{1}", name, genre);
+            return View(await _context.Unexts.ToListAsync());
+        }
 
         // POST: Unexts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Genre,Who")] Unext unext)
+        public async Task<IActionResult> Create([Bind("Id,Name,Length,Genre")] Unext unext)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +92,7 @@ namespace practice_ASP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Genre,Who")] Unext unext)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Length,Genre")] Unext unext)
         {
             if (id != unext.Id)
             {
