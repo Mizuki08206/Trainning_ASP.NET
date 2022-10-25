@@ -1,0 +1,16 @@
+﻿@model practice_ASP.Models.Entry
+@{
+}
+@if (ViewData["err"]!=null){
+	<p style="color:red">@ViewData["err"]</p>
+}
+<h1>Entry Confirm</h1>
+<p>@Html.DisplayNameFor(model=>model.Name)</p>
+<p>@Html.DisplayFor(model=>model.Name)</p>
+
+<p>@Html.DisplayNameFor(model=>model.Age)</p>
+<p>@Html.DisplayFor(model=>model.Age)</p>
+
+
+<p>@Html.DisplayNameFor(model=>model.Anime)</p>
+<p>@Html.DisplayFor(model=>model.Anime)</p>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using practice_ASP.Models;
 
 namespace practice_ASP.Models
 {
@@ -92,5 +93,7 @@ namespace practice_ASP.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<practice_ASP.Models.Book> Book { get; set; }
     }
 }

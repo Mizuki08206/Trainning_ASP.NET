@@ -22,11 +22,31 @@ namespace practice_ASP.Controllers
         {
             return View();
         }
-        public IActionResult Input()//formタグのパラメータは基本的にstring型
+        public IActionResult Input()
         {
             return View();
         }
-        public IActionResult Confirm(string tel,string gender)
+        [HttpGet]
+        public IActionResult Entry()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Entry([Bind("Name", "Age", "Anime")] Entry entry)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewData["err"] = "エラーじゃないよ";
+                return View("EntryConfirm", entry);
+            }
+            else
+            {
+                ViewData["err"] = "エラーだよ";
+                return View("EntryConfirm", entry);
+            }
+
+        }
+        public IActionResult Confirm(string tel, string gender)//formタグのパラメータは基本的にstring型
         {
             ViewData["tel"] = tel;
             ViewData["gender"] = gender;
