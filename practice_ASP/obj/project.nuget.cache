@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jgpxSCLYrg35pBJDLuZvN08N6YN8n7TkSD6/NcroqrrWL8S+dIT314uPh1a02qXz6jIFGFLqXlfAh+z17Fw5og==",
+  "dgSpecHash": "fGB6uj4YNV13dBc4bxSnc8KkjIgUQY045xsOPPo0MPeNwV9QnUnEqw2ha4shApY6o0XOiLw9Y3o2BXjA+wnGtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ia\\source\\repos\\practice_ASP\\practice_ASP\\practice_ASP.csproj",
+  "projectFilePath": "C:\\Users\\ia\\source\\repos\\ASP.NET1025\\practice_ASP\\practice_ASP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ia\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

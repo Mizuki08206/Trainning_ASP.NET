@@ -9855,11 +9855,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ia\\source\\repos\\practice_ASP\\practice_ASP\\practice_ASP.csproj",
+      "projectUniqueName": "C:\\Users\\ia\\source\\repos\\ASP.NET1025\\practice_ASP\\practice_ASP.csproj",
       "projectName": "practice_ASP",
-      "projectPath": "C:\\Users\\ia\\source\\repos\\practice_ASP\\practice_ASP\\practice_ASP.csproj",
+      "projectPath": "C:\\Users\\ia\\source\\repos\\ASP.NET1025\\practice_ASP\\practice_ASP.csproj",
       "packagesPath": "C:\\Users\\ia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ia\\source\\repos\\practice_ASP\\practice_ASP\\obj\\",
+      "outputPath": "C:\\Users\\ia\\source\\repos\\ASP.NET1025\\practice_ASP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ia\\AppData\\Roaming\\NuGet\\NuGet.Config",

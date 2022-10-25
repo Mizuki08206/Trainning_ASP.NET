@@ -23,7 +23,40 @@ namespace practice_ASP.Controllers
         {
               return View(await _context.Unexts.ToListAsync());
         }
-
+        public async Task<IActionResult> Search(string name, string genre)
+        {
+            if(name!=null && genre != null)
+            {
+                using (var context = new testdbContext())
+                {
+                    var unext = context.Unexts
+                        .Where(u => u.Name.Contains(name))
+                        .Where(u=>u.Genre.Contains(genre))
+                        .ToList();
+                    return View(unext);
+                }
+            }
+            if (genre != null)
+            {
+                using (var context = new testdbContext())
+                {
+                    var unext = context.Unexts
+                        .Where(u => u.Genre.Contains(genre))
+                        .ToList();
+                    return View(unext);
+                }
+            }else if (name != null)
+            {
+                using (var context = new testdbContext())
+                {
+                    var unext = context.Unexts
+                        .Where(u => u.Name.Contains(name))
+                        .ToList();
+                    return View(unext);
+                }
+            }
+            return View(await _context.Unexts.ToListAsync());
+        }
         // GET: Unexts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,13 +80,7 @@ namespace practice_ASP.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> Search(string name,string genre)
-        {
-            ViewData["word"]=name;
-            ViewData["genre"] = genre;
-            Console.WriteLine("{0}\n{1}", name, genre);
-            return View(await _context.Unexts.ToListAsync());
-        }
+        
 
         // POST: Unexts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
