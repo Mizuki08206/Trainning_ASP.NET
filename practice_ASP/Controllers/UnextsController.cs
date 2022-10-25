@@ -25,6 +25,7 @@ namespace practice_ASP.Controllers
         }
         public async Task<IActionResult> Search(string name, string genre)
         {
+            //匿名クラスかラムダ式を使っている...？
             if(name!=null && genre != null)
             {
                 using (var context = new testdbContext())
